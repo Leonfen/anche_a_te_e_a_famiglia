@@ -1,0 +1,17 @@
+{
+  "name": "anche_a_te_e_a_famiglia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Leonfen/anche_a_te_e_a_famiglia.git",
+  "author": "Leonfen <michelegunterland@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "opn": "^6.0.0",
+    "qrcode": "^1.5.0",
+    "whatsapp-web.js": "^1.15.3"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
