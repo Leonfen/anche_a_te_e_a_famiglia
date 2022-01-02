@@ -2,7 +2,6 @@ require('dotenv').config()
 const { Client } = require('whatsapp-web.js');
 const QRCode = require('qrcode')
 const opn = require('opn');
-const { response } = require('express');
 
 const client = new Client();
 
