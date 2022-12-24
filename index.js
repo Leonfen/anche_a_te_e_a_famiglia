@@ -17,38 +17,21 @@ client.on('qr', (qr) => {
 client.on('ready', () => {
     console.log('Client is ready!');
 });
-
 client.on('message', msg => {
-    if (msg.body.toLocaleLowerCase().includes('auguri')) {
+    if (msg.body.toLocaleLowerCase().includes('auguri') || (msg.body.toLocaleLowerCase().includes('buon natale') || msg.body.toLocaleLowerCase().includes('buon capodanno') || msg.body.toLocaleLowerCase().includes('buon anno'))) {
         msg.getChat().then((response) => {
-
             if ((!response.name.toLocaleLowerCase().includes('med')) && (!response.name.toLocaleLowerCase().includes('uab')) && (!response.name.toLocaleLowerCase().includes('informatica'))) {
                 msg.reply('Auguri anche a voi e a famiglia! <3');
             }
-
         }).catch(err => console.log(err))
     }
-
-    else if (msg.body.toLocaleLowerCase().includes('buon anno')) {
-        msg.getChat().then((response) => {
-
-            if ((!response.name.toLocaleLowerCase().includes('med')) && (!response.name.toLocaleLowerCase().includes('uab')) && (!response.name.toLocaleLowerCase().includes('informatica'))) {
-                msg.reply('Auguri anche a voi e a famiglia! <3');
-            }
-
-        }).catch(err => console.log(err))
-    }
-
     else if (msg.body.toLocaleLowerCase().includes('buon compleanno')) {
         msg.getChat().then((response) => {
-
             if ((!response.name.toLocaleLowerCase().includes('med')) && (!response.name.toLocaleLowerCase().includes('uab')) && (!response.name.toLocaleLowerCase().includes('informatica'))) {
                 msg.reply('Buon compleanno anche a voi e a famiglia! <3');
             }
-
         }).catch(err => console.log(err))
     }
-
 });
 
 client.initialize();
