@@ -18,7 +18,7 @@ client.on('ready', () => {
     console.log('Client is ready!');
 });
 client.on('message', msg => {
-    if (msg.body.toLocaleLowerCase().includes('auguri') || (msg.body.toLocaleLowerCase().includes('buon natale') || msg.body.toLocaleLowerCase().includes('buon capodanno') || msg.body.toLocaleLowerCase().includes('buon anno'))) {
+    if (msg.body.toLocaleLowerCase().includes('auguri') || (msg.body.toLocaleLowerCase().includes('buon natale') || msg.body.toLocaleLowerCase().includes('buon capodanno') || msg.body.toLocaleLowerCase().includes('buon anno') || msg.body.toLocaleLowerCase().includes('buone feste') || msg.body.toLocaleLowerCase().includes('auguroni') || msg.body.toLocaleLowerCase().includes('felici feste') || msg.body.toLocaleLowerCase().includes('felice natale'))) {
         msg.getChat().then((response) => {
             if ((!response.name.toLocaleLowerCase().includes('med')) && (!response.name.toLocaleLowerCase().includes('uab')) && (!response.name.toLocaleLowerCase().includes('informatica'))) {
                 msg.reply('Auguri anche a voi e a famiglia! <3');
