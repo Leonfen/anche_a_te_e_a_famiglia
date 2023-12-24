@@ -1,7 +1,7 @@
 {
   "name": "anche_a_te_e_a_famiglia",
   "version": "2.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "https://github.com/Leonfen/anche_a_te_e_a_famiglia.git",
   "author": "Leonfen <michelegunterland@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "nodemon index.ts",
     "build": "tsc",
-    "start": "node ./index.js"
+    "start": "node ./index.ts"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
