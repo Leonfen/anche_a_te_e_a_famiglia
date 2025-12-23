@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # Per GPU support (opzionale):
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  whatsapp-bot:
+    build: .
+    container_name: whatsapp-auguri-bot
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    volumes:
+      - ./wwebjs_auth:/app/.wwebjs_auth
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+
+volumes:
+  ollama_data:
