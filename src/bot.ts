@@ -47,7 +47,16 @@ const keywordsAuguri: string[] = [
 ];
 
 const escludedChat: string[] = [
-    
+    'novella',
+    'curulli',
+    'med',
+    'mamma',
+    'zia',
+    'zio',
+    'casa',
+    'critelli',
+    'ermelinda',
+    '+39',
 ]
 
 const ollamaModel = process.env.OLLAMA_MODEL || 'llama3.2';

@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   ollama:
     image: ollama/ollama:latest
@@ -8,7 +9,7 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    # Per GPU support (opzionale):
+    # Decommentare per supporto GPU NVIDIA
     # deploy:
     #   resources:
     #     reservations:
@@ -27,8 +28,10 @@ services:
       - ./wwebjs_auth:/app/.wwebjs_auth
     environment:
       - OLLAMA_HOST=http://ollama:11434
-    env_file:
-      - .env
+      - OLLAMA_ENABLED=${OLLAMA_ENABLED:-true}
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3.2}
+      - SUBSTRINGS_ESCLUSE=${SUBSTRINGS_ESCLUSE:-}
+      - CHAT_ID_ESCLUSE=${CHAT_ID_ESCLUSE:-}
     stdin_open: true
     tty: true
 
