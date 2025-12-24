@@ -16,7 +16,7 @@ Il bot analizza ogni messaggio in arrivo e:
 
 1. **Ignora** messaggi da chat nella blacklist (per ID o nome contenente substring)
 2. **Se contiene auguri** risponde con "Auguri anche a te e famiglia!"
-3. **Altrimenti** (se Ollama è abilitato) usa AI per generare una risposta naturale
+3. **Altrimenti** (se Ollama è abilitato) usa AI per distinguere un augurio da un messaggio normale
 
 ## Prerequisiti
 
@@ -55,11 +55,6 @@ OLLAMA_ENABLED=true
 OLLAMA_HOST=http://localhost:11434
 OLLAMA_MODEL=llama3.2
 
-# Blacklist - Substrings da escludere nei nomi chat (separate da virgola)
-SUBSTRINGS_ESCLUSE=mario,luca,giovanni
-
-# Blacklist - ID chat specifici da escludere (opzionale)
-CHAT_ID_ESCLUSE=393401234567@c.us,120363027182391028@g.us
 ```
 
 ## Esecuzione Locale (Sviluppo)
